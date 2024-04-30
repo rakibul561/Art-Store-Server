@@ -39,6 +39,8 @@ async function run() {
       res.send(result);
     })
 
+    /* id get  */
+
     app.get('/newArt/:id', async (req, res) => {
       const result = await artCollection.findOne({
         _id: new ObjectId(req.params.id),
@@ -94,7 +96,7 @@ async function run() {
       res.send(result)
     })
 
-
+    // delete file
 
     app.delete('/art/:id', async (req, res) => {
       const id = req.params.id;
